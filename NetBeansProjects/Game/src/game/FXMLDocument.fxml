@@ -9,7 +9,7 @@
 <AnchorPane id="AnchorPane" prefHeight="418.0" prefWidth="692.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.FXMLDocumentController">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Button fx:id="biguinButton" layoutX="377.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#handleButtonCommencerLaPartie" prefHeight="69.0" prefWidth="261.0" />
+      <Button fx:id="biguinButton" layoutX="377.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleButtonCommencerLaPartie" prefHeight="69.0" prefWidth="261.0" />
       <Button layoutX="88.0" layoutY="161.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="261.0" />
       <Text layoutX="138.0" layoutY="206.0" scaleY="1.5" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="Règle du jeu">
          <font>

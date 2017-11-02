@@ -30,19 +30,17 @@ public class FXMLDocumentController implements Initializable {
     
    
     
-    private void handleButtonCommencerLaPartie(ActionEvent event) {
-        System.out.println("You clicked me!");
-        
-     
-    }
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        System.out.println("Hello world");
     }    
 
     @FXML
     private void handleButtonCommencerLaPartie(MouseEvent event) {
+      
     }
+
     
 }
