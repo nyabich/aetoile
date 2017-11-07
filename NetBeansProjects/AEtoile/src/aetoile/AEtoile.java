@@ -7,6 +7,7 @@ package aetoile;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.*;
 
 /**
  *
@@ -39,9 +40,54 @@ public class AEtoile {
            }
           System.out.print("\n");
         }
-        String initFinal=clavier.nextLine();
         System.out.println("Entrez les coordonnées de l'états initial puis ceux des états finaux ");
-         
+        String initFInal=null; 
+        try{ 
+              InputStreamReader lecteur=new InputStreamReader(System.in); 
+              BufferedReader entree=new BufferedReader(lecteur); 
+              initFInal=entree.readLine(); 
+           } 
+        catch(IOException err){ 
+        }
+        //Je récupère l'état initial
+        
+        int xdebut=Integer.parseInt(initFInal.charAt(1)+"");
+        int ydebut=Integer.parseInt(initFInal.charAt(3)+"");
+        
+        listEtat.get(xdebut*longueur+ydebut).setX(xdebut);
+        listEtat.get(xdebut*longueur+ydebut).setY(ydebut);
+        listEtat.get(xdebut*longueur+ydebut).setInitialState();
+        
+        //je récupère les états finaux
+        
+        String FInal=initFInal.substring(5, initFInal.length());
+        int count =1;
+        while(FInal!=null&&5<=FInal.length() )
+        {
+            System.out.println(FInal);
+            xdebut=Integer.parseInt(FInal.charAt(1)+"");
+            ydebut=Integer.parseInt(FInal.charAt(3)+"");
+            listEtat.get(xdebut*longueur+ydebut).setX(xdebut);
+            listEtat.get(xdebut*longueur+ydebut).setY(ydebut);
+            listEtat.get(xdebut*longueur+ydebut).setFinalState();
+            FInal=FInal.substring(5, FInal.length());
+        }
+        
+        for(int i=0;i<hauteur;i++)
+        {
+          for(int j= 0; j<longueur;j++)
+          {
+              if(listEtat.get(i*longueur+j).isFinal())
+                 System.out.print("F");
+              else
+                 if(listEtat.get(i*longueur+j).isInitial())
+                     System.out.print("I");
+                  else
+                     System.out.print("X");
+              System.out.print("\t");
+           }
+          System.out.print("\n");
+        }
     }
         
     
