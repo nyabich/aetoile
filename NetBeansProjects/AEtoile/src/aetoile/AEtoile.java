@@ -88,6 +88,8 @@ public class AEtoile {
            }
           System.out.print("\n");
         }
+        System.out.println("Entrer les noeuds et leur successeurs");
+        String successeur= clavier.nextLine();
     }
         
     
